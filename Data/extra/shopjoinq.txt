@@ -1,0 +1,8 @@
+SELECT * FROM shop.orders;
+select o.orderid, o.orderdate, od.quantity, p.price
+from orders o, order_details od, products p
+where o.orderid = 10248 AND
+o.orderid = od.OrderID AND
+od.ProductID = p.ProductID;
+
+select * from order_details where orderid = 10248;
