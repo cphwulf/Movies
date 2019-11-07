@@ -5,14 +5,26 @@
  */
 package Core;
 import movies.Controller.MainController;
+import movies.Util.DBConnector;
+import java.sql.*;
 
 /**
  *
  * @author thor
  */
 public class Main {
-	public static void main(String[] args) {
-		MainController.mainControllerLooop();
+	public static void main(String[] args) throws SQLException {
+		Connection connection = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		//MainController.mainControllerLooop();
+
+		connection = DBConnector.getConnection();
+		String q = "Select * from movies";
+		statement = connection.createStatement();
+		resultSet = statement.executeQuery(q);
+		// få resultater
+		
 	}
 	
 }
